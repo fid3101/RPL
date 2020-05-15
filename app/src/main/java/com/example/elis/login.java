@@ -44,7 +44,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-       /* Login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //validate(Email.getEditText().getText().toString(),Password.getEditText().getText().toString());
@@ -75,7 +75,7 @@ public class login extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.cancel();
-                                    Intent intent = new Intent(login.this,homeActivity.class);
+                                    Intent intent = new Intent(login.this,akun.class);
                                     startActivity(intent);
                                 }
                             });
@@ -91,7 +91,7 @@ public class login extends AppCompatActivity {
                 });
 
             }
-        }); */
+        });
     }
 
    /* private void validate(String userName, String userPassword){
