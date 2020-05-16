@@ -15,6 +15,7 @@
         android:name="com.example.elis.home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/kelola_menu"
         android:name="com.example.elis.kelola"
@@ -25,4 +26,9 @@
         android:name="com.example.elis.akun"
         android:label="fragment_akun"
         tools:layout="@layout/fragment_akun" />
+    <fragment
+        android:id="@+id/alarm_menu"
+        android:name="com.example.elis.alarm"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
 </navigation>

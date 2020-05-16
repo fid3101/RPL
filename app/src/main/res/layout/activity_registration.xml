@@ -8,25 +8,27 @@
     android:orientation="vertical"
     tools:context=".Registration">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/montserrat"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <Button
+    <ImageButton
         android:id="@+id/regBtnsignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/signup"
         android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -49,7 +51,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -63,10 +65,10 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Nama Lengkap"
+        android:hint="   Nama Lengkap"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -77,9 +79,10 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Email"
+        android:hint="   Email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regNamalengkap" />
 
@@ -90,9 +93,10 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Nomor Handphone"
+        android:hint="   Nomor Handphone"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regEmail" />
 
@@ -103,7 +107,7 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Alamat"
+        android:hint="  Alamat"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +120,7 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Password"
+        android:hint="   Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -130,7 +134,7 @@
         android:layout_marginTop="17dp"
         android:background="@drawable/teks_input"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="   Confirm Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

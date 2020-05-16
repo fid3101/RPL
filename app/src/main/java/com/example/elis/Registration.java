@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ import java.util.Map;
 public class Registration extends AppCompatActivity {
 
     private EditText regNamaLengkap, regEmail, regAlamat, regNohanphone, regPassword, regConfirmPassword;
-    private Button regBtn;
+    private ImageButton regBtn;
     private TextView regTologin;
     private ProgressBar      progress;
     private FirebaseAuth    firebaseAuth;
@@ -56,7 +57,7 @@ public class Registration extends AppCompatActivity {
         regAlamat = (EditText)findViewById(R.id.regAlamat) ;
         regPassword = (EditText)findViewById(R.id.regPassword);
         regConfirmPassword = (EditText)findViewById(R.id.regConfirmPassword);
-        regBtn = (Button)findViewById(R.id.regBtnsignup);
+        regBtn = (ImageButton)findViewById(R.id.regBtnsignup);
         regTologin = (TextView)findViewById(R.id.regBtntoLogin);
         progress = (ProgressBar)findViewById(R.id.regProgressBar);
 

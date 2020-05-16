@@ -13,9 +13,15 @@
         android:icon="@drawable/info_icon"/>
 
     <item
+        android:id="@+id/alarm_menu"
+        android:title="@string/alarm"
+        android:icon="@drawable/alarm"/>
+
+    <item
         android:id="@+id/kelola_menu"
         android:title="@string/kelola"
         android:icon="@drawable/kelola_icon"/>
+
     <item
         android:id="@+id/akun_menu"
         android:title="@string/akun"
