@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class login extends AppCompatActivity {
     private ImageButton Login;
     private TextView Daftar;
     private FirebaseAuth firebaseAuth;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class login extends AppCompatActivity {
         Login= findViewById(R.id.btnLogin);
         Daftar= findViewById(R.id.daftar);
         firebaseAuth = FirebaseAuth.getInstance();
+        progressBar = (ProgressBar)findViewById(R.id.login_progressBar);
 
         Daftar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +62,7 @@ public class login extends AppCompatActivity {
                     Password.setError("Password required");
                     return;
                 }
-
+                progressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

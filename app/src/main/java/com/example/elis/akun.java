@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,6 +44,7 @@ public class akun extends Fragment {
     private FirebaseAuth firAuth;
     private String UserID;
     private FirebaseFirestore firestore;
+    private ProgressBar progressBar;
 
 
     // TODO: Rename and change types of parameters
@@ -94,7 +96,7 @@ public class akun extends Fragment {
         btnGantiPass = v.findViewById(R.id.akun_btnganpas);
         btnLogout = v.findViewById(R.id.akun_btnLogout);
         btnRename = v.findViewById(R.id.akun_rename);
-
+        progressBar = v.findViewById(R.id.akun_progressBar);
 
 
          firestore = FirebaseFirestore.getInstance();
@@ -117,15 +119,15 @@ public class akun extends Fragment {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 firAuth.getInstance().signOut();
-                Intent intent = new Intent(getActivity(),login.class);
-                startActivity(intent);
+                startActivity(new Intent(getActivity(),login.class));
             }
         });
         btnRename.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Menambahkan page ganti nama
+                startActivity(new Intent(getActivity(),reChangeProfil.class));
             }
         });
 
