@@ -22,10 +22,9 @@ public class timepick extends AppCompatActivity  implements TimePickerDialog.OnT
     private FirebaseDatabase firebaseDatabase;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm);
+        setContentView(R.layout.fragment_timepick);
         Button button = (Button)findViewById(R.id.alrmBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -47,7 +47,7 @@ public class login extends AppCompatActivity {
        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(Email.getEditText().getText().toString(),Password.getEditText().getText().toString());
+                //validate(Email.getEditText().getText().toString(),Password.getEditText().getText().toString());
                 String email = Email.getEditText().getText().toString();
                 String pass = Password.getEditText().getText().toString();
 
