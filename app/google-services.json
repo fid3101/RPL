@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "222062798472-fa0u1nlqueoqf2o28mr4k77l9ntejd1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.elis",
+            "certificate_hash": "1b6acbe91a26c85391e08529c9ca2618a7c02bbd"
+          }
+        },
+        {
           "client_id": "222062798472-o7r0uft7v91blvk38231calkch83bfi8.apps.googleusercontent.com",
           "client_type": 3
         }
