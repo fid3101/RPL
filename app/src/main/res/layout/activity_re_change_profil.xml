@@ -60,7 +60,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/profil_nama" />
-
+    <!--
     <EditText
         android:id="@+id/profil_email"
         android:layout_width="341dp"
@@ -72,6 +72,20 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/profil_nohp" />
+
+    <EditText
+        android:id="@+id/profil_password"
+        android:layout_width="341dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/teks_input"
+        android:ems="10"
+        android:hint="Konfirmasi password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/profil_email" />
+        -->
 
     <Button
         android:id="@+id/profil_btnSimpan"

@@ -131,6 +131,13 @@ public class akun extends Fragment {
             }
         });
 
+        btnGantiPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),gantiPassword.class));
+            }
+        });
+
         return v;
     }
 }

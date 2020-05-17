@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".reChangeProfil"></activity>
-        <activity android:name=".gantiPassword" />
+        <activity android:name=".gantiPassword"></activity>
+        <activity android:name=".reChangeProfil" />
         <activity android:name=".Registration" />
         <activity android:name=".homeActivity" />
         <activity android:name=".login" />
