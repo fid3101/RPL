@@ -89,6 +89,7 @@ public class login extends AppCompatActivity {
                         }else{
                             Toast.makeText(getApplicationContext(),
                                     "Email atau Password Salah",Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
                             return;
                         }
                     }
