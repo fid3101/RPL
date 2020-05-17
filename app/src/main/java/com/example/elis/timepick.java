@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,11 +27,18 @@ public class timepick extends AppCompatActivity  implements TimePickerDialog.OnT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_timepick);
         Button button = (Button)findViewById(R.id.alrmBtn);
+        buttonBatal = (Button)findViewById(R.id.alarmBatal);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment timepick = new JamFragment();
                 timepick.show(getSupportFragmentManager(),"Time picker");
+            }
+        });
+        buttonBatal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),homeActivity.class));
             }
         });
     }

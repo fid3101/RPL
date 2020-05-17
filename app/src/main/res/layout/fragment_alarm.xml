@@ -7,13 +7,14 @@
     android:background="@color/colorPrimary">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/alarm_Btndemo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:fontFamily="@font/montserrat"
-        android:text="INI ALARM"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="36sp"
-        android:layout_gravity="center"/>
+        android:text="Alarm demo"
+        android:textColor="#2c2c2c"
+        android:textSize="36sp" />
 
 </FrameLayout>
