@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.elis">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".reChangeProfil"></activity>
+        <activity android:name=".gantiPassword" />
+        <activity android:name=".Registration" />
         <activity android:name=".homeActivity" />
         <activity android:name=".login" />
         <activity android:name=".MainActivity">
