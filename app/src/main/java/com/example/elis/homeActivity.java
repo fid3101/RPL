@@ -32,9 +32,9 @@ public class homeActivity extends AppCompatActivity {
                         case R.id.info_menu:
                             selectedFragment = new info();
                             break;
-                        case R.id.alarm_menu:
-                            selectedFragment = new alarm();
-                            break;
+                        //case R.id.alarm_menu:
+                        //    selectedFragment = new alarm();
+                        //    break;
                         case R.id.kelola_menu:
                             selectedFragment = new kelola();
                             break;
