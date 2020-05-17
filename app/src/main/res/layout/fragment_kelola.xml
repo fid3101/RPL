@@ -21,6 +21,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guide_isi_kelola"
                     android:layout_width="wrap_content"
@@ -93,189 +94,15 @@
                     android:textSize="14sp"
                     app:layout_constraintTop_toTopOf="@id/guide_judul_kelola"
                     app:layout_constraintStart_toStartOf="@id/guide_kiri_kelola" />
-
-                <TableLayout
-                    android:layout_width="355dp"
+                
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_kelola"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="420dp"
-                    android:foregroundGravity="top"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/guide_kanan_kelola"
-                    app:layout_constraintStart_toStartOf="@id/guide_kiri_kelola"
-                    app:layout_constraintTop_toTopOf="@id/guide_isi_kelola">
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="top">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent">
-
-                            <androidx.constraintlayout.widget.Guideline
-                                android:id="@+id/guideline7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                app:layout_constraintGuide_begin="26dp" />
-
-                            <ImageView
-                                android:id="@+id/bg_perangkat"
-                                android:layout_width="175dp"
-                                android:layout_height="175dp"
-                                android:src="@drawable/bg_perangkat"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintBottom_toBottomOf="parent"/>
-
-                            <TextView
-                                android:id="@+id/lampu"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="24dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Lampu     "
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="18sp"
-                                android:textStyle="bold"
-                                app:layout_constraintLeft_toLeftOf="@id/guideline7"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat"
-                                android:drawableRight="@drawable/lampu" />
+                    app:layout_constraintTop_toBottomOf="@id/guide_isi_kelola"
+                    app:layout_constraintLeft_toLeftOf="@id/guide_kiri_kelola"/>
 
 
-
-                            <TextView
-                                android:id="@+id/ruangan"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="76dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Ruang Tamu"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="12sp"
-                                app:layout_constraintLeft_toLeftOf="@id/guideline7"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat" />
-
-                            <androidx.appcompat.widget.SwitchCompat
-                                android:id="@+id/switch_perangkat1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:theme="@style/SwitchTheme"
-                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat"
-                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat"
-                                app:layout_constraintRight_toRightOf="@id/bg_perangkat"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat"
-                                app:layout_constraintVertical_bias="0.75" />
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/bg_perangkat2"
-                                android:layout_width="175dp"
-                                android:layout_height="175dp"
-                                android:src="@drawable/bg_perangkat"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                />
-
-                            <TextView
-                                android:id="@+id/stop_kontak"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="24dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Stop Kontak  "
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                app:layout_constraintLeft_toLeftOf="@id/guideline8"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2"
-                                android:drawableRight="@drawable/stop_kontak" />
-
-
-
-                            <TextView
-                                android:id="@+id/ruangan2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="76dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Ruang Tamu"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="12sp"
-                                app:layout_constraintLeft_toLeftOf="@id/guideline8"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2" />
-
-                            <androidx.appcompat.widget.SwitchCompat
-                                android:id="@+id/switch_perangkat2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:theme="@style/SwitchTheme"
-                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat2"
-                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat2"
-                                app:layout_constraintRight_toRightOf="@id/bg_perangkat2"
-                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2"
-                                app:layout_constraintVertical_bias="0.75" />
-
-                            <androidx.constraintlayout.widget.Guideline
-                                android:id="@+id/guideline8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                app:layout_constraintGuide_begin="26dp" />
-
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/bg_plus"
-                                android:layout_width="175dp"
-                                android:layout_height="175dp"
-                                android:src="@drawable/bg_perangkat"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                />
-
-                            <ImageButton
-                                android:id="@+id/imageButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_add"
-                                android:background="@null"
-                                app:layout_constraintLeft_toLeftOf="@id/bg_plus"
-                                app:layout_constraintRight_toRightOf="@id/bg_plus"
-                                app:layout_constraintTop_toTopOf="@id/bg_plus"
-                                app:layout_constraintBottom_toBottomOf="@id/bg_plus"
-                                android:scaleX="2"
-                                android:scaleY="2"/>
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </TableRow>
-
-                </TableLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
