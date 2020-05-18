@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,28 +89,488 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="2 perangkat terhubung"
+                    android:text="perangkat"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="14sp"
                     app:layout_constraintTop_toTopOf="@id/guide_judul_kelola"
                     app:layout_constraintStart_toStartOf="@id/guide_kiri_kelola" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview_kelola"
-                    android:layout_width="349dp"
+                <TableLayout
+                    android:layout_width="355dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="420dp"
+                    android:foregroundGravity="top"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guide_kanan_kelola"
+                    app:layout_constraintStart_toStartOf="@id/guide_kiri_kelola"
+                    app:layout_constraintTop_toTopOf="@id/guide_isi_kelola">
 
-                    android:layout_height="233dp"
-                    app:layout_constraintLeft_toLeftOf="@id/guide_kiri_kelola"
-                    app:layout_constraintTop_toBottomOf="@id/guide_isi_kelola" />
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top">
 
-                <ImageButton
-                    android:id="@+id/kelola_btnAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/ic_input_add"
-                    app:layout_constraintEnd_toStartOf="@+id/guide_kanan_kelola"
-                    app:layout_constraintTop_toTopOf="@+id/guide_judul_kelola" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
 
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat1"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/jenis1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Lampu     "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat1"
+                                android:drawableRight="@drawable/lampu" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide1"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat1" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat1"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat1"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat1"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat1"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus1"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat2"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <TextView
+                                android:id="@+id/jenis2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Stop Kontak  "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide2"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2"
+                                android:drawableRight="@drawable/stop_kontak" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide2"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat2"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat2"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat2"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat2"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus2"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat3"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/jenis3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Lampu     "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide3"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat3"
+                                android:drawableRight="@drawable/lampu" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide3"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat3" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat3"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat3"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat3"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat3"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus3"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat4"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <TextView
+                                android:id="@+id/jenis4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Stop Kontak  "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide4"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat4"
+                                android:drawableRight="@drawable/stop_kontak" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide4"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat4" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat4"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat4"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat4"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat4"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus4"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat5"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/jenis5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Lampu     "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide5"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat5"
+                                android:drawableRight="@drawable/lampu" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide5"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat5" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat5"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat5"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat5"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat5"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus5"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/bg_perangkat6"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/bg_perangkat"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                            <TextView
+                                android:id="@+id/jenis6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Stop Kontak  "
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@id/guide6"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat6"
+                                android:drawableRight="@drawable/stop_kontak" />
+
+
+
+                            <TextView
+                                android:id="@+id/ruangan6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="76dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Ruang Tamu"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toLeftOf="@id/guide6"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat6" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_perangkat6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SwitchTheme"
+                                app:layout_constraintBottom_toBottomOf="@id/bg_perangkat6"
+                                app:layout_constraintLeft_toLeftOf="@id/bg_perangkat6"
+                                app:layout_constraintRight_toRightOf="@id/bg_perangkat6"
+                                app:layout_constraintTop_toTopOf="@id/bg_perangkat6"
+                                app:layout_constraintVertical_bias="0.75" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_begin="26dp" />
+
+                            <ImageButton
+                                android:id="@+id/bg_plus6"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:background="@drawable/bg_plus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </TableRow>
+
+                </TableLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
