@@ -1,13 +1,26 @@
 package com.example.elis;
 
+import android.content.Intent;
+import android.icu.util.ValueIterator;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
+
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import io.grpc.NameResolver;
 
@@ -28,6 +41,11 @@ public class kelola extends Fragment {
     private String jenis;
     private String ruangan;
     private Switch mswitch;
+    private Button btnAdd;
+
+    private RecyclerView firestorelist;
+    private FirebaseFirestore firestore;
+    private FirestoreRecyclerAdapter adapter;
 
     public kelola() {
         // Required empty public constructor
@@ -53,9 +71,70 @@ public class kelola extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kelola, container, false);
+        View view = inflater.inflate(R.layout.fragment_kelola, container, false);
+        btnAdd = view.findViewById(R.id.kelola_btnAdd);
+        firestorelist = view.findViewById(R.id.recyclerview_kelola);
+        firestore = FirebaseFirestore.getInstance();
+
+        Query query = firestore.collection("Lampu");
+
+        FirestoreRecyclerOptions<lamp_class> options =new FirestoreRecyclerOptions.Builder<lamp_class>()
+                .setQuery(query, lamp_class.class).build();
+
+        adapter = new FirestoreRecyclerAdapter<lamp_class, lampViewHolder>(options) {
+            @NonNull
+            @Override
+            public lampViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_kelola, parent, false);
+                return new lampViewHolder(view1);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull lampViewHolder holder, int position, @NonNull lamp_class model) {
+                    holder.lampname.setText(model.getLampu());
+                    holder.kondisi.setChecked(model.isKondisi());
+            }
+        };
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), addLampu.class));
+            }
+        });
+
+        //view holder
+        firestorelist.setHasFixedSize(true);
+        firestorelist.setLayoutManager(new LinearLayoutManager(getActivity()));
+        firestorelist.setAdapter(adapter);
+
+
+        return view;
+
+    }
+
+    private class lampViewHolder extends  RecyclerView.ViewHolder{
+        private TextView lampname;
+        private Switch kondisi;
+
+        public lampViewHolder(@NonNull View itemView) {
+            super(itemView);
+            lampname = itemView.findViewById(R.id.ruangan);
+            kondisi = itemView.findViewById(R.id.add_switch);
+        }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

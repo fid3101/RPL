@@ -94,14 +94,22 @@
                     android:textSize="14sp"
                     app:layout_constraintTop_toTopOf="@id/guide_judul_kelola"
                     app:layout_constraintStart_toStartOf="@id/guide_kiri_kelola" />
-                
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview_kelola"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintTop_toBottomOf="@id/guide_isi_kelola"
-                    app:layout_constraintLeft_toLeftOf="@id/guide_kiri_kelola"/>
+                    android:layout_width="349dp"
 
+                    android:layout_height="233dp"
+                    app:layout_constraintLeft_toLeftOf="@id/guide_kiri_kelola"
+                    app:layout_constraintTop_toBottomOf="@id/guide_isi_kelola" />
+
+                <ImageButton
+                    android:id="@+id/kelola_btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    app:layout_constraintEnd_toStartOf="@+id/guide_kanan_kelola"
+                    app:layout_constraintTop_toTopOf="@+id/guide_judul_kelola" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

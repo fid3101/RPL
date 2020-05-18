@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="@id/bg_perangkat" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_perangkat1"
+            android:id="@+id/add_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:theme="@style/SwitchTheme"
