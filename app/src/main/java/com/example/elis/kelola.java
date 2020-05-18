@@ -1,50 +1,37 @@
 package com.example.elis;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Switch;
+
+import java.util.List;
 
 import io.grpc.NameResolver;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link kelola#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class kelola extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_JENIS = "jenis";
-    private static final String ARG_RUANGAN = "ruangan";
-    private static final String ARG_MSWITCH = "mswith";
 
     // TODO: Rename and change types of parameters
+    private ImageButton tambah;
     private String jenis;
     private String ruangan;
     private Switch mswitch;
-
-    public kelola() {
+/*
+    public kelola(Context mcontext, List<kelolacardview> mdata) {
         // Required empty public constructor
-    }
-
-    // TODO: Rename and change types and number of parameters
-    public static kelola newInstance(String jenis, String ruangan, Switch mswitch) {
-        kelola fragment = new kelola();
-        Bundle args = new Bundle();
-        args.putString(ARG_JENIS, jenis);
-        args.putString(ARG_RUANGAN, ruangan);
-        fragment.setArguments(args);
-        return fragment;
+        this.mcontext=mcontext;
+        this.mdata=mdata;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             jenis = getArguments().getString(ARG_JENIS);
@@ -55,7 +42,8 @@ public class kelola extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
         return inflater.inflate(R.layout.fragment_kelola, container, false);
-    }
+    }*/
 }
