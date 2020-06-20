@@ -11,11 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".reChangeProfil"></activity>
+        <activity android:name=".reChangeProfil"/>
         <activity android:name=".Registration" />
         <activity android:name=".homeActivity" />
         <activity android:name=".login" />
         <activity android:name=".addPerangkat" />
+        <activity android:name=".home" />
+        <activity android:name=".info" />
+        <activity android:name=".alarm" />
+        <activity android:name=".kelola" />
+        <activity android:name=".akun" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

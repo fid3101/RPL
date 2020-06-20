@@ -67,25 +67,8 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-
-                            final AlertDialog.Builder builder = new AlertDialog.Builder(
-                                    login.this,R.style.AlertDialogStyle
-                            );
-                            builder.setIcon(R.drawable.ic_check);
-                            builder.setTitle("Login Sukses!");
-                            builder.setMessage("Selamat datang di Elis");
-                            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.cancel();
-                                    Intent intent = new Intent(login.this,homeActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-
-                            final AlertDialog alert=builder.create();
-                            alert.show();
-
+                            Intent intent = new Intent(login.this,home.class);
+                            startActivity(intent);
                         }else{
                             Toast.makeText(getApplicationContext(),
                                     "Email atau Password Salah",Toast.LENGTH_SHORT).show();

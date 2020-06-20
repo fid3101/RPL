@@ -2,8 +2,8 @@ package com.example.elis;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -17,35 +17,34 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         BottomNavigationView navbar = findViewById(R.id.bottomnav);
-        navbar.setOnNavigationItemSelectedListener(navlistener);
-    }
-    private BottomNavigationView.OnNavigationItemSelectedListener navlistener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()){
-                        case R.id.home_menu:
-                            selectedFragment = new home();
-                            break;
-                        case R.id.info_menu:
-                            selectedFragment = new info();
-                            break;
-                        //case R.id.alarm_menu:
-                        //    selectedFragment = new alarm();
-                        //    break;
-                        case R.id.kelola_menu:
-                            selectedFragment = new kelola();
-                            break;
-                        case R.id.akun_menu:
-                            selectedFragment = new akun();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment,selectedFragment).commit();
-
-                    return true;
+        navbar.setSelectedItemId(R.id.home_menu);
+        navbar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home_menu:
+                        startActivity(new Intent(getApplicationContext(), home.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.info_menu:
+                        startActivity(new Intent(getApplicationContext(), info.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.alarm_menu:
+                        startActivity(new Intent(getApplicationContext(), alarm.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.kelola_menu:
+                        startActivity(new Intent(getApplicationContext(), kelola.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.akun_menu:
+                        startActivity(new Intent(getApplicationContext(), akun.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
-            };
+                return false;
+            }
+        });
+    }
 }

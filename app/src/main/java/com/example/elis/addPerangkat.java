@@ -37,6 +37,7 @@ public class addPerangkat extends AppCompatActivity {
     private static final String KEY_RUANG = "Rangan";
 
     private RadioGroup perangkat;
+    private RadioButton perangkatButton;
     private EditText Ruangan;
     private ImageButton Simpan;
     private FirebaseAuth firebaseAuth;
@@ -60,13 +61,16 @@ public class addPerangkat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int jenis = perangkat.getCheckedRadioButtonId();
+                perangkatButton = findViewById(jenis);
                 String ruang = Ruangan.getText().toString();
                 progressBar.setVisibility(View.VISIBLE);
 
-                Fragment newFragment = new Fragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container, newFragment);
-                ft.commit();
+                Map<String, Object> perangkat = new HashMap<>();
+                perangkat.put("idjenis",jenis);
+                perangkat.put("jenis",perangkatButton);
+                perangkat.put("ruangan",ruang);
+
+                startActivity(new Intent(getApplicationContext(),kelola.class));
 
             }});
 

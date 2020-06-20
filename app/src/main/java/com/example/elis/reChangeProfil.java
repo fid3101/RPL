@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO: memperbaiki supaya bisa kembali ke akun tanpa crash
+// TODO: memperbaiki supaya bisa kembali ke nav_akun tanpa crash
 
 public class reChangeProfil extends AppCompatActivity {
     private static final String KEY_NAMA = "Nama Lengkap";
