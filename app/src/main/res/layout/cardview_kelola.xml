@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="175dp"
-    android:layout_height="175dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:background="@color/colorPrimary">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewKelola"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="26dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_widget_kelola">
 
-        <ImageView
-            android:id="@+id/bg_perangkat"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
-            android:src="@drawable/bg_perangkat"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            <ImageView
+                android:id="@+id/icon_cardview"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/lamp_icon" />
 
-        <TextView
-            android:id="@+id/lampu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:drawableRight="@drawable/lampu"
-            android:fontFamily="@font/montserrat"
-            android:text="Lampu     "
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/guideline12"
-            app:layout_constraintTop_toTopOf="@id/bg_perangkat" />
+            <TextView
+                android:id="@+id/perangkat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Perangkat"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/icon_cardview"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_perangkat1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:theme="@style/SwitchTheme"
-            app:layout_constraintBottom_toBottomOf="@id/bg_perangkat"
-            app:layout_constraintLeft_toLeftOf="@id/bg_perangkat"
-            app:layout_constraintRight_toRightOf="@id/bg_perangkat"
-            app:layout_constraintTop_toTopOf="@id/bg_perangkat"
-            app:layout_constraintVertical_bias="0.756" />
+            <TextView
+                android:id="@+id/ruangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Ruangan"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintStart_toEndOf="@id/icon_cardview"
+                app:layout_constraintTop_toBottomOf="@id/perangkat" />
 
-        <TextView
-            android:id="@+id/ruangan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Ruang Tamu"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="12sp"
-            app:layout_constraintLeft_toLeftOf="@id/guideline12"
-            app:layout_constraintTop_toTopOf="@id/bg_perangkat" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchKelola"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:theme="@style/SwitchTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

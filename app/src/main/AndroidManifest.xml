@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".reChangeProfil"></activity>
-        <activity android:name=".gantiPassword" />
         <activity android:name=".Registration" />
         <activity android:name=".homeActivity" />
         <activity android:name=".login" />
+        <activity android:name=".addPerangkat" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
