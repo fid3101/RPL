@@ -53,7 +53,7 @@ public class timepick extends AppCompatActivity  implements TimePickerDialog.OnT
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cancelAlarm();
+                //cancelAlarm();
             }
         });
     }
