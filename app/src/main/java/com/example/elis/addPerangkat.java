@@ -28,6 +28,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.ObjectInputValidation;
+import java.security.PrivateKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,44 +38,60 @@ public class addPerangkat extends AppCompatActivity {
     private static final String KEY_JENIS = "Jenis Peragkat";
     private static final String KEY_RUANG = "Rangan";
 
-    private RadioGroup perangkat;
-    private RadioButton perangkatButton;
+    private RadioGroup jenis;
+    private RadioButton lampu, listrik;
     private EditText Ruangan;
     private ImageButton Simpan;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseFirestore firestore;
     private ProgressBar progressBar;
+    private DataHelper dbHelper;
+    private String j;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_perangkat);
-        perangkat= findViewById(R.id.radio);
+        jenis= findViewById(R.id.radio);
+        lampu= findViewById(R.id.lampu);
+        listrik= findViewById(R.id.listrik);
 
         Ruangan= findViewById(R.id.editRuangan);
         Simpan= findViewById(R.id.simpan);
-        firebaseAuth = FirebaseAuth.getInstance();
-        firestore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.login_progressBar);
 
-        //TODO: hubungin ke FireBase, intent ke fragmen kelola belum bener
+        dbHelper = new DataHelper(this);
+
+        jenis.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i==R.id.lampu){
+                    j="Lampu";
+                }
+                else if(i==R.id.listrik){
+                    j="Stop Kontak";
+                }
+            }
+        });
+
         Simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int jenis = perangkat.getCheckedRadioButtonId();
-                perangkatButton = findViewById(jenis);
-                String ruang = Ruangan.getText().toString();
-                progressBar.setVisibility(View.VISIBLE);
-
-                Map<String, Object> perangkat = new HashMap<>();
-                perangkat.put("idjenis",jenis);
-                perangkat.put("jenis",perangkatButton);
-                perangkat.put("ruangan",ruang);
-
+                if(j==null) j="Lampu";
+                getData();
                 startActivity(new Intent(getApplicationContext(),kelola.class));
+            }
 
-            }});
+            private void getData() {
+                String ruang = ""+Ruangan.getText().toString().trim();
+                String timestamp = ""+System.currentTimeMillis();
+                long id = dbHelper.insertInfo(
+                        ""+j,
+                        ""+ruang,
+                        ""+timestamp
+                );
 
+                Toast.makeText(addPerangkat.this,"Perangkat sudah ditambahkan",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         }
 }

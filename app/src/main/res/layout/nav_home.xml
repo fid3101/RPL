@@ -34,17 +34,6 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
-                    android:id="@+id/bg_widget_kelola"
-                    android:layout_width="385dp"
-                    android:layout_height="385dp"
-                    android:src="@drawable/bg_widget_kelola"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/bg_panel"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <ImageView
                     android:id="@+id/bg_panel"
                     android:layout_width="390dp"
                     android:layout_height="260dp"
@@ -57,7 +46,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageButton
-                    android:id="@+id/notifButton"
+                    android:id="@+id/kelolaButton"
                     android:layout_width="320dp"
                     android:layout_height="40dp"
                     android:background="@drawable/button_dashboard"
@@ -73,42 +62,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="Rp. 50.000,-"
+                    android:text="5"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="26sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/notifButton"
-                    app:layout_constraintHorizontal_bias="0.179"
+                    app:layout_constraintBottom_toTopOf="@id/kelolaButton"
+                    app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintLeft_toLeftOf="@id/bg_panel"
                     app:layout_constraintRight_toRightOf="@id/bg_panel"
                     app:layout_constraintTop_toBottomOf="@id/penggunaan_listrik"
-                    app:layout_constraintVertical_bias="0.352" />
-
-                <TextView
-                    android:id="@+id/pastikan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
-                    android:text="Pastikan listrikmu tidak boros"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@id/bg_widget_kelola"
-                    app:layout_constraintHorizontal_bias="0.26"
-                    app:layout_constraintLeft_toLeftOf="@id/bg_widget_kelola"
-                    app:layout_constraintRight_toRightOf="@id/bg_widget_kelola"
-                    app:layout_constraintTop_toTopOf="@id/bg_widget_kelola"
-                    app:layout_constraintVertical_bias="0.113" />
+                    app:layout_constraintVertical_bias="0.411" />
 
                 <TextView
                     android:id="@+id/penggunaan_listrik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="Penggunaan listrik anda saat ini"
+                    android:text="Perangkat yang terhubung"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@id/bg_panel"
-                    app:layout_constraintHorizontal_bias="0.291"
+                    app:layout_constraintHorizontal_bias="0.225"
                     app:layout_constraintLeft_toLeftOf="@id/bg_panel"
                     app:layout_constraintRight_toRightOf="@id/bg_panel"
                     app:layout_constraintTop_toTopOf="@id/bg_panel"
@@ -118,47 +92,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="Atur Notifikasi"
+                    android:text="Kelola Perangkatmu"
                     android:textColor="#fff"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@id/notifButton"
+                    app:layout_constraintBottom_toBottomOf="@id/kelolaButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/notifButton" />
+                    app:layout_constraintTop_toTopOf="@id/kelolaButton" />
 
-                <TableRow
-                    android:id="@+id/kelola_widget"
-                    android:layout_width="320dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="250dp"
-                    app:layout_constraintBottom_toBottomOf="@id/bg_widget_kelola"
-                    app:layout_constraintLeft_toLeftOf="@id/bg_widget_kelola"
-                    app:layout_constraintRight_toRightOf="@id/bg_widget_kelola"
-                    app:layout_constraintTop_toBottomOf="@id/pastikan"
-                    >
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat"
-                        android:text="Lampu Ruang Tamu"
-                        android:textColor="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        tools:layout_editor_absoluteX="53dp"
-                        tools:layout_editor_absoluteY="357dp"
-                        />
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/switch1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:theme="@style/SwitchTheme"/>
-
-
-                </TableRow>
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline2"
@@ -203,124 +145,24 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_begin="25dp" />
 
+
                 <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="50dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pemadaman_recyclerview"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical" >
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <androidx.constraintlayout.widget.Guideline
-                                android:id="@+id/guideline3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                app:layout_constraintGuide_begin="26dp" />
-
-                            <ImageView
-                                android:id="@+id/bg_pemadaman"
-                                android:layout_width="300dp"
-                                android:layout_height="350dp"
-                                android:src="@drawable/bg_pemadaman"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintLeft_toLeftOf="@+id/guideline3"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:layout_editor_absoluteY="-11dp" />
-
-                            <ImageView
-                                android:id="@+id/fg_pemadaman"
-                                android:layout_width="316dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginTop="60dp"
-                                android:src="@drawable/fg_pemadaman"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0" />
-
-                            <TextView
-                                android:id="@+id/hari"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Rabu"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
-                                app:layout_constraintHorizontal_bias="0.109"
-                                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
-                                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
-                                app:layout_constraintTop_toTopOf="@id/fg_pemadaman"
-                                app:layout_constraintVertical_bias="0.42" />
-
-                            <TextView
-                                android:id="@+id/tanggal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat"
-                                android:text="31 Januari 2000"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
-                                app:layout_constraintHorizontal_bias="0.157"
-                                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
-                                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
-                                app:layout_constraintTop_toBottomOf="@id/hari"
-                                app:layout_constraintVertical_bias="0.031" />
-
-                            <TextView
-                                android:id="@+id/jam"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat"
-                                android:text="07.00"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
-                                app:layout_constraintHorizontal_bias="0.111"
-                                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
-                                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
-                                app:layout_constraintTop_toBottomOf="@id/tanggal"
-                                app:layout_constraintVertical_bias="0.04" />
-
-                            <TextView
-                                android:id="@+id/lokasi"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@drawable/ic_place"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Dramaga"
-                                android:textColor="@color/colorTextPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
-                                app:layout_constraintHorizontal_bias="0.111"
-                                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
-                                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
-                                app:layout_constraintTop_toBottomOf="@id/jam"
-                                app:layout_constraintVertical_bias="0.04" />
-
-                            <androidx.constraintlayout.widget.Guideline
-                                android:id="@+id/guideline5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                app:layout_constraintGuide_begin="47dp" />
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </LinearLayout>
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/cardview_pemadaman" />
                 </HorizontalScrollView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

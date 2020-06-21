@@ -114,7 +114,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guide_isi_kelola" />
+                    app:layout_constraintTop_toTopOf="@+id/guide_isi_kelola"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/cardview_kelola"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

@@ -5,16 +5,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.google.android.gms.common.internal.Constants;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -24,9 +22,9 @@ public class kelola extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Adapter adapter;
-    ArrayList<String> items;
     public static String KEY_ACTIVITY = "msg_activity";
     ImageButton add;
+    DataHelper dataHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,17 +62,9 @@ public class kelola extends AppCompatActivity {
             }
         });
 
-        items = new ArrayList<>();
-        items.add("First CardView");
-        items.add("Second CardView");
-        items.add("Third CardView");
-        items.add("Fourth CardView");
-        items.add("Fifth CardView");
-        items.add("Sixth CardView");
-
         recyclerView = findViewById(R.id.recycler_kelola);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new Adapter(this, items);
+        dataHelper = new DataHelper(this);
+        adapter = new Adapter(kelola.this, dataHelper.getAllData( "id DESC"));
         recyclerView.setAdapter(adapter);
 
         add = findViewById(R.id.addPerangkat);
@@ -88,5 +78,10 @@ public class kelola extends AppCompatActivity {
 
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter = new Adapter(kelola.this, dataHelper.getAllData( "id DESC"));
+        recyclerView.setAdapter(adapter);
+    }
 }

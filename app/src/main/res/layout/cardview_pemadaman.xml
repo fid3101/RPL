@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="310dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:background="@color/colorPrimary">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewPemadaman"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="310dp"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="308dp" />
+
+            <ImageView
+                android:id="@+id/bg_pemadaman"
+                android:layout_width="300dp"
+                android:layout_height="220dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/bg_pemadaman"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fg_pemadaman"
+                android:layout_width="316dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fg_pemadaman"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/hari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Rabu"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
+                app:layout_constraintHorizontal_bias="0.109"
+                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
+                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
+                app:layout_constraintTop_toTopOf="@id/fg_pemadaman"
+                app:layout_constraintVertical_bias="0.42" />
+
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="31 Januari 2000"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
+                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
+                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
+                app:layout_constraintTop_toBottomOf="@id/hari"
+                app:layout_constraintVertical_bias="0.045" />
+
+            <TextView
+                android:id="@+id/jam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="07.00"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
+                app:layout_constraintHorizontal_bias="0.109"
+                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
+                app:layout_constraintRight_toRightOf="@id/fg_pemadaman"
+                app:layout_constraintTop_toBottomOf="@id/tanggal"
+                app:layout_constraintVertical_bias="0.071" />
+
+            <TextView
+                android:id="@+id/lokasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:drawableLeft="@drawable/ic_place"
+                android:fontFamily="@font/montserrat"
+                android:text="Dramaga"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/fg_pemadaman"
+                app:layout_constraintLeft_toLeftOf="@id/fg_pemadaman"
+                app:layout_constraintTop_toBottomOf="@id/jam"
+                app:layout_constraintVertical_bias="0.053" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="47dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,41 +1,50 @@
 package com.example.elis;
 
-import android.widget.Switch;
-
 public class kelolacardview {
+    private String id;
+    private String jenis;
+    private String ruangan;
+    private String timestamp;
 
-    private String Jenis;
-    private String Ruangan;
-    private Switch Mswitch;
 
-    public kelolacardview(String jenis, String ruangan, Switch mswitch){
-        Jenis = jenis;
-        Ruangan = ruangan;
-        Mswitch = mswitch;
+
+    public kelolacardview(String id, String jenis, String ruangan, String timestamp) {
+        this.id = id;
+        this.jenis = jenis;
+        this.ruangan = ruangan;
+        this.timestamp = timestamp;
+    }
+
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getJenis() {
-        return Jenis;
+        return jenis;
     }
 
     public String getRuangan() {
-        return Ruangan;
+        return ruangan;
     }
 
-    public Switch getMswitch() {
-        return Mswitch;
+    public void setId(String id) {
+        this.id = id;
     }
-
 
     public void setJenis(String jenis) {
-        Jenis = jenis;
+        this.jenis = jenis;
     }
 
     public void setRuangan(String ruangan) {
-        Ruangan = ruangan;
-    }
-
-    public void setMswitch(Switch mswitch) {
-        Mswitch = mswitch;
+        this.ruangan = ruangan;
     }
 }

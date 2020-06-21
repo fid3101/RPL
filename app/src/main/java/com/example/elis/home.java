@@ -5,21 +5,34 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class home extends AppCompatActivity {
 
+    private ImageButton kelolaPerangkat;
+    private TextView jmlh;
+    private int jumlah_per;
+    DataHelper dataHelper;
+    RecyclerViewAdapter adapter;
+    RecyclerView recyclerView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_home);
+
+        kelolaPerangkat = findViewById(R.id.kelolaButton);
+        jmlh = findViewById(R.id.nominal);
 
         BottomNavigationView navbar = findViewById(R.id.bottomnav);
         navbar.setSelectedItemId(R.id.home_menu);
@@ -51,6 +64,34 @@ public class home extends AppCompatActivity {
                 return false;
             }
         });
+
+        dataHelper = new DataHelper(this);
+        jumlah_per = dataHelper.jumlahPerangkat();
+        String j = Integer.toString(jumlah_per);
+        jmlh.setText(j);
+
+        recyclerView = findViewById(R.id.pemadaman_recyclerview);
+        dataHelper = new DataHelper(this);
+        adapter = new RecyclerViewAdapter(home.this, dataHelper.getAllDataPemadaman( "id DESC"));
+        recyclerView.setAdapter(adapter);
+
+        kelolaPerangkat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), kelola.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dataHelper = new DataHelper(this);
+        jumlah_per = dataHelper.jumlahPerangkat();
+        String j = Integer.toString(jumlah_per);
+        jmlh.setText(j);
+
     }
 
 }
